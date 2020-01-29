@@ -4,6 +4,25 @@ import { Link } from "react-router-dom";
 import "./Gallery.scss";
 class Gallery extends Component {
   state = {};
+  getReleaseDate(date) {
+    const d = new Date(date);
+    const month = [
+      "JAN",
+      "FEB",
+      "MAR",
+      "APR",
+      "MAY",
+      "JUN",
+      "JUL",
+      "AUG",
+      "SEP",
+      "OCT",
+      "NOV",
+      "DEC"
+    ];
+    const releaseDate = `${d.getFullYear()} ${month[d.getMonth()]}`;
+    return releaseDate;
+  }
   render() {
     return (
       <div className="app-main wrapper">
@@ -26,8 +45,14 @@ class Gallery extends Component {
                 <span className="movie-rate">
                   {Math.ceil(movie.vote_average * 10) + "%"}
                 </span>
-                <span className="movie-title">{movie.title}</span>
-                <span className="movie-date">{movie.release_date}</span>
+                <span className="movie-title">
+                  {movie.title.length > 20
+                    ? movie.title.substring(0, 20) + "..."
+                    : movie.title}
+                </span>
+                <span className="movie-date">
+                  {this.getReleaseDate(movie.release_date)}
+                </span>
               </Link>
             </CSSTransition>
           ))}
