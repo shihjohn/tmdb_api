@@ -1,0 +1,50 @@
+@import "../scss/main";
+.movie {
+  &-header {
+    position: relative;
+    z-index: 1;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 245px;
+    background-size: cover;
+    &-backarrow-icon {
+      display: block;
+      padding-top: 70px;
+      padding-left: 40px;
+      width: 18px;
+      height: 19px;
+      background: url("../images/arrow_back_white.png") center no-repeat;
+    }
+  }
+  &-main {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    &-head {
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 30px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #0f303d;
+      &-img {
+        margin-top: -100px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5),
+          0px 8px 16px rgba(0, 0, 0, 0.5), 0px 16px 32px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        float: left;
+        margin-right: 20px;
+      }
+      &-details {
+        font: 12px/ 21px $Montserrat;
+        color: #b8d8e6;
+      }
+    }
+    &-body {
+      display: inline-block;
+      width: 100%;
+      color: #9fbbc7;
+      min-height: 400px;
+    }
+  }
+}

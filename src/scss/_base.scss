@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500&display=swap");
+$Roboto: "Roboto", sans-serif;
+$Montserrat: "Montserrat", sans-serif;
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background: #081b23;
+  font-family: $Roboto;
+}
+h1,
+h2 {
+  font-family: $Montserrat;
+  font-weight: bold;
+  color: #e3f4fc;
+}
+h1 {
+  font-size: 28px;
+  line-height: 30px;
+}
+h2 {
+  font-size: 20px;
+  line-height: 24px;
+}
+p {
+  margin: 7px 0;
+  padding: 0;
+  font: 16px/24px $Roboto;
+}
