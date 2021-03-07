@@ -2,54 +2,6 @@
 
 .app {
   &-header {
-    position: relative;
-    overflow: hidden;
-    background: radial-gradient(
-      82.98% 100% at 53.46% -21.35%,
-      rgba(5, 112, 172, 0.46) 0%,
-      rgba(8, 27, 35, 0) 100%
-    );
-    padding: 20px;
-    text-align: center;
-    &-wrapper {
-      position: relative;
-      z-index: 1;
-      .logo {
-        padding: 40px 0;
-      }
-      span {
-        position: absolute;
-        background: rgba(1, 210, 119, 0.83);
-        border-radius: 3.5px;
-        transform: rotate(-45deg);
-        width: 162px;
-        height: 4px;
-        &:nth-of-type(1) {
-          left: 0px;
-          top: -50px;
-        }
-        &:nth-of-type(2) {
-          left: 0px;
-          top: -20px;
-        }
-        &:nth-of-type(3) {
-          left: -55px;
-          top: 100px;
-        }
-        &:nth-of-type(4) {
-          right: -60px;
-          top: -45px;
-        }
-        &:nth-of-type(5) {
-          right: -50px;
-          top: -5px;
-        }
-        &:nth-of-type(6) {
-          right: -20px;
-          top: 100px;
-        }
-      }
-    }
     &-search {
       z-index: 10;
       position: relative;
@@ -80,25 +32,8 @@
           font: 500 14px / 16px $Roboto;
           color: #01d277;
         }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 481px) {
-  .app {
-    &-header {
-      &-wrapper {
-        span {
-          width: 200px;
-          &:nth-of-type(3) {
-            left: -55px;
-            top: 90px;
-          }
-          &:nth-of-type(6) {
-            right: -50px;
-            top: 90px;
-          }
+        &:focus {
+          outline: none;
         }
       }
     }

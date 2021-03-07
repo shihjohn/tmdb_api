@@ -2,28 +2,26 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import axios from "axios";
+import { FaArrowLeft } from "react-icons/fa";
 import "./Movie.scss";
-
-const CONFIG = {
-  API_KEY: "6ed12e064b90ae1290fa326ce9e790ff"
-};
 
 class Movie extends Component {
   state = {
     activeMovie: [],
-    inProp: false
+    inProp: false,
   };
   componentDidMount() {
     this.getMovie();
+    window.scrollTo(0, 0); // Scroll to top on page change with React Router
   }
   getMovie() {
     const movie_id = this.props.location.state.movie.id;
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${CONFIG.API_KEY}`
+        `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
       )
-      .then(res => this.setState({ activeMovie: res.data }))
-      .catch(err => console.log(err));
+      .then((res) => this.setState({ activeMovie: res.data }))
+      .catch((err) => console.log(err));
   }
   getReleaseYear = () => {
     let releaseYear = new Date(this.state.activeMovie.release_date);
@@ -45,12 +43,12 @@ class Movie extends Component {
               height: 300,
               backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${this.props.location.state.movie.backdrop_path})`,
               backgroundSize: "cover",
-              backgroundPosition: "center"
+              backgroundPosition: "center",
             }}
           >
             <div className="wrapper">
               <Link to="/">
-                <span className="movie-header-backarrow-icon"></span>
+                <FaArrowLeft className="movie-header-icon" />
               </Link>
             </div>
           </header>
